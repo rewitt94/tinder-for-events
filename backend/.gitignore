@@ -1,1 +1,3 @@
 /.env
+/build
+/tinder_for_events.egg-info
