@@ -7,4 +7,4 @@
 - pip install -r ./requirements.txt
 - install python vscode extension
 - set python vscode interpreter to be $(which python)
-- pip install -e .
+- python -m pip install .

@@ -1,4 +1,2 @@
-
-
-def bucket_goes_here():
-    print("bucketgoeshere")
+def bucketgoeshere():
+    print("bucket goes here")
