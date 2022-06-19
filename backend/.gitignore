@@ -1,3 +1,4 @@
 /.env
 /build
 /tinder_for_events.egg-info
+/__pycache__
