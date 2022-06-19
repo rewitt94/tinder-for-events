@@ -1,29 +1,20 @@
-import '../model/profile.dart';
+import '../model/event.dart';
 import 'package:flutter/material.dart';
 
-class ProfileCard extends StatelessWidget {
-  const ProfileCard({Key? key, required this.profile}) : super(key: key);
-  final Profile profile;
+class EventCard extends StatelessWidget {
+  const EventCard({Key? key, required this.event}) : super(key: key);
+  final Event event;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 580,
+      height: 400,
       width: 340,
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: Stack(
         children: [
-          Positioned.fill(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image.asset(
-                profile.imageAsset,
-                fit: BoxFit.fitHeight,
-              ),
-            ),
-          ),
           Positioned(
-            bottom: 0,
+            height: 100,
             child: Container(
               height: 80,
               width: 340,
@@ -46,7 +37,7 @@ class ProfileCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      profile.name,
+                      event.name,
                       style: const TextStyle(
                         fontFamily: 'Nunito',
                         fontWeight: FontWeight.w800,
@@ -54,7 +45,16 @@ class ProfileCard extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      profile.distance,
+                      event.location,
+                      style: const TextStyle(
+                        fontFamily: 'Nunito',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    Text(
+                      event.date,
                       style: const TextStyle(
                         fontFamily: 'Nunito',
                         fontWeight: FontWeight.w400,

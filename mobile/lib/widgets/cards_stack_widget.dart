@@ -1,5 +1,5 @@
 import '../main.dart';
-import '../model/profile.dart';
+import '../model/event.dart';
 import './action_button_widget.dart';
 import './drag_widget.dart';
 import 'package:flutter/material.dart';
@@ -13,27 +13,19 @@ class CardsStackWidget extends StatefulWidget {
 
 class _CardsStackWidgetState extends State<CardsStackWidget>
     with SingleTickerProviderStateMixin {
-  List<Profile> draggableItems = [
-    const Profile(
-        name: 'Rohini',
-        distance: '10 miles away',
-        imageAsset: 'assets/images/avatar_1.png'),
-    const Profile(
-        name: 'Rohini',
-        distance: '10 miles away',
-        imageAsset: 'assets/images/avatar_2.png'),
-    const Profile(
-        name: 'Rohini',
-        distance: '10 miles away',
-        imageAsset: 'assets/images/avatar_3.png'),
-    const Profile(
-        name: 'Rohini',
-        distance: '10 miles away',
-        imageAsset: 'assets/images/avatar_4.png'),
-    const Profile(
-        name: 'Rohini',
-        distance: '10 miles away',
-        imageAsset: 'assets/images/avatar_5.png'),
+  List<Event> draggableItems = [
+    const Event(
+        name: 'Makers Hackathon',
+        location: 'Makers Academy',
+        date: 'July 20th'),
+    const Event(
+        name: 'Makers Code Together',
+        location: '10 miles away',
+        date: 'August 10th'),
+    const Event(
+        name: 'Makers Social',
+        location: 'Cullpepper',
+        date: 'September 1st'),
   ];
 
   ValueNotifier<Swipe> swipeNotifier = ValueNotifier(Swipe.none);
@@ -106,7 +98,7 @@ class _CardsStackWidgetState extends State<CardsStackWidget>
                         ),
                       ),
                       child: DragWidget(
-                        profile: draggableItems[index],
+                        event: draggableItems[index],
                         index: index,
                         swipeNotifier: swipeNotifier,
                         isLastCard: true,
@@ -115,7 +107,7 @@ class _CardsStackWidgetState extends State<CardsStackWidget>
                   );
                 } else {
                   return DragWidget(
-                    profile: draggableItems[index],
+                    event: draggableItems[index],
                     index: index,
                     swipeNotifier: swipeNotifier,
                   );
